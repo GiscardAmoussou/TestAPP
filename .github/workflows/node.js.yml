@@ -28,7 +28,7 @@ jobs:
     - run: npm run build 
     - name: Deploy
       run: |
-          git config --global user.name GiscardAmoussou
+          git config --global user.name GISCARDAMOUSSOU
           git config --global user.email giscard.amoussou@enigma-school.com
           git remote set-url origin https://${github_token}@github.com/${repository}
           npm run deploy

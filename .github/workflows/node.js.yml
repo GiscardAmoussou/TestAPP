@@ -28,8 +28,13 @@ jobs:
     - run: npm run build 
     - name: Deploy
       run: |
-          git config --global user.name "${{ secrets.GIT_USERNAME }}"
-          git config --global user.email "${{ secrets.GIT_EMAIL }}"
-          git remote set-url origin https://${ secrets.SECRET_KEY }@github.com/${repository}
+          git config --global user.name GiscardAmoussou
+          git config --global user.email giscard.amoussou@enigma-school.com
+          git remote set-url origin https://${github_token}@github.com/${repository}
           npm run deploy
+      env:
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          github_token: ${{ secrets.SECRET_KEY }}
+          repository: ${{ github.repository }}
     - run: npm test

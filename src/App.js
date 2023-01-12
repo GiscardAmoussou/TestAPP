@@ -15,7 +15,8 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React test du profesqsq
+          Learn React test du Guillaume
+          We are delighted to have you among us. On behalf of all the members and the management, we would like to extend our warmest welcome and good wishes!
         </a>
       </header>
     </div>

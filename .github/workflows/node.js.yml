@@ -8,9 +8,6 @@ on:
   pull_request:
     branches: ["main"]
 
-env: 
-  SECRET_KEY: ${{ secrets.SECRET_KEY }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,8 +25,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm install
+    - run: npm run build 
+    - name: Deploy
     - run: |
-        echo $SECRET_KEY
-        npm run deploy
+          git config --global user.name "${{ secrets.GiscardAmoussou }}"
+          git config --global user.email "${{ secrets.giscard.amoussou@gmail.com }}"
+          git remote set-url origin https://x-access-token:${{ secrets.SECRET_KEY }}@github.com/${{github.TestAPP}}
+          npm run deploy   
     - run: npm test
-

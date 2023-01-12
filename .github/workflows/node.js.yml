@@ -30,7 +30,7 @@ jobs:
       run: |
           git config --global user.name GiscardAmoussou
           git config --global user.email giscard.amoussou@enigma-school.com
-          git remote set-url origin https://x-access-token:${{ secrets.SECRET_KEY }}@github.com/${{github.repository}}
+          git remote set-url origin https://${github_token}@github.com/${repository}
           npm run deploy
       env:
           user_name: "github-actions[bot]"

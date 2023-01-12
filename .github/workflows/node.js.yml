@@ -35,6 +35,6 @@ jobs:
       env:
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
-          github_token: ${{ secrets.SECRET_KEY }}
+          github_token: ${{ secrets.acces_token }}
           repository: ${{ github.repository }}
     - run: npm test
